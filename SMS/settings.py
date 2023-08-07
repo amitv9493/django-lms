@@ -115,14 +115,25 @@ ASGI_APPLICATION = "SMS.asgi.application"
 # -----------------------------
 # NOTE: Some model fields may not work on sqlite db,
 # so consider using postgresql instead
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": env("DB_NAME"),
+#         "USER": env("DB_USER"),
+#         "PASSWORD": env("DB_PASSWORD"),
+#         "HOST": env("DB_HOST"),
+#         "PORT": env("DB_PORT"),
+#     }
+# }
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASSWORD"),
-        "HOST": env("DB_HOST"),
-        "PORT": env("DB_PORT"),
+        "NAME": "defaultdb",
+        "USER": "vultradmin",
+        "PASSWORD": "AVNS_GpS-JKtbcXb1N5rd4VW",
+        "HOST":"vultr-prod-0a1d5534-db85-43a3-97dc-847384a3118b-vultr-prod-8497.vultrdb.com",
+        "PORT": 16751,
     }
 }
 
@@ -183,8 +194,8 @@ EMAIL_HOST = (
 )
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env("USER_EMAIL")
-EMAIL_HOST_PASSWORD = env("USER_PASSWORD")
+EMAIL_HOST_USER = "amitv9493@gmail.com"
+EMAIL_HOST_PASSWORD = "amitv9493"
 
 # crispy config
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -204,5 +215,5 @@ REST_FRAMEWORK = {
 }
 
 # Strip payment config
-STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
-STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = "" #env("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = "" # env("STRIPE_PUBLISHABLE_KEY")
